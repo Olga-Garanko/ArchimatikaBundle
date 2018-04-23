@@ -1,0 +1,191 @@
+.header{
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: gray;
+  overflow: hidden;
+  position: relative;
+  color: $toneColor;
+  overflow-x: hidden;
+  a{
+    color: $toneColor;
+    &:hover{
+      color:$textColor;
+    }
+  }
+}
+.nav{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  a{
+    @include fsize(12px);
+    letter-spacing: 1.2px;
+    color: $toneColor;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+  .logo{
+    padding: 40px 0 0 0;
+    &:hover svg{
+      fill: $textColor;
+    }
+    svg{
+      fill: $toneColor;
+      transition: all 0.5s;
+    }
+  }
+  .menu-button{
+    height: 60px;
+    width: 60px;
+    border: 1px solid $toneColor;
+    color: $toneColor;
+    border-radius: 50%;
+    margin-top: 20px;
+    position: relative;
+    a{
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%);
+    }
+  }  
+}
+.nav.active{
+  svg{
+    fill: $textColor;
+  }
+.menu-button{
+    border: 1px solid $textColor;
+    a{
+      color: $textColor;
+    }
+  }
+}
+.nav.in-active{
+  svg{
+    fill: $toneColor;
+  }
+.menu-button{
+    border: 1px solid $toneColor;
+    a{
+      color: $toneColor;
+    }
+  }
+}
+
+.lang{
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  z-index: 2;
+  a{
+    margin-bottom: 30px;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    @include fsize(12px);
+  }
+}
+
+.menu{
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 0.9s;
+  height: 200%;
+  width: 200%;
+  border-radius: 50%;
+  top: -50%;
+  right: -50%;
+  @include background-opacity($textColor, 0.7);
+  overflow: hidden;
+  transform: scale(0);
+  transform-origin: 100% 0;
+  z-index: 99;
+  ul{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.menu.active{
+  transform: scale(1);
+}
+
+.slider{
+  position: relative;
+  width: 100%;
+}
+.slider__item{
+  height: 100vh;
+  min-height: 600px;
+  background: url(./static/img/geometry.png) no-repeat top center;
+  background-size: cover;
+  padding: 0 40px;
+  position: relative;
+}
+.slider-item__info{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 40px 90px 40px;
+  .slider-item__text{
+  }
+  .slider-item__slogan{
+    @include fsize(50px);
+    font-family: $titleFont;
+    text-transform: uppercase;
+    line-height: 1em;
+    font-weight: 900;
+    position: relative;
+    &::after{
+      content: '';
+      height: 9px;
+      width: 9px;
+      border-radius: 50%;
+      background-color: $toneColor;
+      position: absolute;
+      bottom: 17px;
+      right: -5px;
+    }
+  }
+}
+.slick-dots{
+  position: absolute;
+  bottom: calc(50% + 18px);
+  z-index: 3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  li{
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin-bottom: -19px;
+    position: relative;
+    &::after{
+      content: '';
+      width: 9px;
+      height: 9px;
+      background-color: $toneColor;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    &.slick-active{
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+  }
+}

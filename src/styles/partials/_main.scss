@@ -1,0 +1,102 @@
+@font-face{
+font-family: 'DINPro';
+src: url('../../static/fonts/DINPro-Regular.woff') format('woff'),
+url('../../static/fonts/DINPro-Regular.woff2') format('woff2');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'DINPro';
+src: url('../../static/fonts/DINPro-Bold.woff') format('woff'),
+url('../../static/fonts/DINPro-Bold.woff2') format('woff2');
+font-weight: bold;
+font-style: normal;
+}
+@font-face{
+font-family: 'GothamPro-Black';
+src: url('../../static/fonts/GothamPro-Black.woff') format('woff'),
+url('../../static/fonts/GothamPro-Black.woff2') format('woff2');
+font-weight: 900;
+font-style: normal;
+}
+html{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.25em;
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: $textColor;
+  font-family: $baseFont;
+  min-width: 320px;
+}
+body *{
+  line-height: 1.25em;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a{
+  color: $textColor;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+a:hover{
+  text-decoration: none;
+}
+a:active{
+  color:#2e3748;
+}
+body * {
+  box-sizing: border-box;
+  outline: none;
+}
+* {
+  outline: none;
+}
+ul{
+
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+p{
+  padding: 0 0 10px 0;
+  margin: 0;
+}
+h1{
+  @include fsize(60px);
+  font-weight: 700;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0 16px 0;
+  color: white;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.clearfix:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.content{
+  margin: 0 auto;
+  padding: 0 40px;
+  //max-width: 1280px;
+}
+
+@media only screen and (max-width : 768px) {
+
+}
