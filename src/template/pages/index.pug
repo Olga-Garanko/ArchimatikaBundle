@@ -142,69 +142,29 @@ html(lang='en')
             br
             | выигрывают все:
           .beneficial-list
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Люди
-                .beneficial-list-item__text
-                  | покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Заказчики
-                .beneficial-list-item__text
-                  | спокойны, потому что знают —
-                  | объекты Архиматики выгодно
-                  | выделяются на фоне других
-                  | застройщиков, а качество и
-                  | продуманность на порядок выше.
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Застройщики
-                .beneficial-list-item__text
-                  | получают реальную к исполнению документацию, проработанную до последнего гвоздя.
-                  | Получают вовремя!
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Люди
-                .beneficial-list-item__text
-                  | покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Люди
-                .beneficial-list-item__text
-                  | покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Люди
-                .beneficial-list-item__text
-                  | покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.
-            .beneficial-list__item
-              .beneficial-list-item__img
-                .beneficial-list-item__img_cropped(style='background-image: url(./static/img/layer-10.png);')
-              .beneficial-list-item__info
-                .beneficial-list-item__title Люди
-                .beneficial-list-item__text
-                  | покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.
+            - var beneficialList = [{img : 'layer-10', title : 'Люди', text : 'покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.'}, {img : 'layer-9', title : 'Заказчики', text : 'спокойны, потому что знают — объекты Архиматики выгодно выделяются на фоне других застройщиков, а качество и продуманность на порядок выше.'}, {img : 'layer-10', title : 'Застройщики', text : 'получают реальную к исполнению документацию, проработанную до последнего гвоздя. Получают вовремя!'}, {img : 'layer-10', title : 'Люди', text : 'покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.'}, {img : 'layer-10', title : 'Люди', text : 'покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.'}, {img : 'layer-10', title : 'Люди', text : 'покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.'}, {img : 'layer-10', title : 'Люди', text : 'покупают квартиры с продуманными планировками. Подъезды в которые приятно входить. Придомовую территорию, по которой хочеться гулять.'}];
+              for beneficial in beneficialList
+                .beneficial-list__item
+                  .beneficial-list-item__img
+                    .beneficial-list-item__img_cropped(style='background-image: url(./static/img/' + beneficial.img + '.png);')
+                  .beneficial-list-item__info
+                   .beneficial-list-item__title= beneficial.title
+                   .beneficial-list-item__text= beneficial.text
           .beneficial__button
             a#loadMore(href='#') Смотреть все принципы
       section.start-point.content
         .start-point__title С чего начать?
-        .start-point__text
-          | Создадим ваш проект с нуля или оценим существующий, укажем на слабые места
-          | и сильные стороны, расскажем, как повысить его финансовую привлекательность.
-          | Расскажем о подводных камнях и поможем избежать их.
+        .start-point__text.
+          Создадим ваш проект с нуля или оценим существующий, укажем на слабые места
+          и сильные стороны, расскажем, как повысить его финансовую привлекательность.
+          Расскажем о подводных камнях и поможем избежать их.
         a.start-point__button(href='') Оценить проект
+    mixin menuMixin(number, itemsArray)
+     ul
+       - for (var i=0; i<=number; i++) {
+         span
+           a(href='')= itemsArray[i]
+       - }
     footer.footer.content
       .footer-list
         .footer-list__item.contacts
@@ -220,23 +180,11 @@ html(lang='en')
             a(href='') facebook
             a(href='') liveJournal
         .footer-list__item
-          span
-            a(href='') НАШ ПОДХОД
-          span
-            a(href='') ПРОЦЕСС РАБОТЫ
-          span
-            a(href='') ПРОЕКТЫ
-          span
-            a(href='') О КОМПАНИИ
+          - var itemsArray = ['НАШ ПОДХОД', 'ПРОЦЕСС РАБОТЫ', 'ПРОЕКТЫ', 'О КОМПАНИИ']
+            +menuMixin(4,itemsArray)
         .footer-list__item
-          span
-            a(href='') иНЖЕНЕРНЫЕ РАБОТЫ
-          span
-            a(href='') НАША ЭКСПЕРТИЗА
-          span
-            a(href='') ЖУРНАЛ
-          span
-            a(href='') КОНТАКТЫ
+          - var itemsArray = ['иНЖЕНЕРНЫЕ РАБОТЫ', 'НАША ЭКСПЕРТИЗА', 'ЖУРНАЛ', 'КОНТАКТЫ']
+            +menuMixin(4,itemsArray)
         .footer-list__item.mail
           span
             | Для сотрудничества
